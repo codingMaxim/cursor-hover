@@ -1,0 +1,64 @@
+html {
+  margin: 0;
+  box-sizing: border-box;
+}
+.follow-arrows {
+  position: relative;
+  background: turquoise;
+  height: 90vh;
+  aspect-ratio: 1;
+  margin: 0 auto;
+
+  > .arrow {
+    position: absolute;
+    font-size: 4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &.--left {
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &.--right {
+      right: 0;
+      top: 50%;
+      transform: translateY(-60%) rotate(180deg);
+    }
+    &.--top {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &.--bottom {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  > .ball {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: purple;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: ease-in 0.5s;
+  }
+  > .arrow.--left:hover ~ .ball {
+    left: 25%;
+  }
+  > .arrow.--top:hover ~ .ball {
+    top: 25%;
+  }
+  > .arrow.--right:hover ~ .ball {
+    left: 75%;
+  }
+  > .arrow.--bottom:hover ~ .ball {
+    top: 75%;
+  }
+}
